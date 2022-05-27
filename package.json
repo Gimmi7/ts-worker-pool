@@ -1,0 +1,29 @@
+{
+  "name": "ts-worker-pool",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Gimmi7",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Gimmi7/ts-worker-pool.git"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^17.0.35",
+    "@types/uuid": "^8.3.4",
+    "@typescript-eslint/parser": "^5.26.0"
+  },
+  "dependencies": {
+    "ts-lock": "^1.0.1",
+    "uuid": "^8.3.2"
+  }
+}
