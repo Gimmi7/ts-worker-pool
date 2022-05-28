@@ -1,4 +1,3 @@
-import { EventLoopUtilization } from 'node:perf_hooks';
 import { AsyncLock } from 'ts-lock';
 import { WorkerWrap } from './workerwrap.js';
 
