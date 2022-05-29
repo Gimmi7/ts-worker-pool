@@ -1,5 +1,5 @@
 {
-  "name": "ts-worker-pool",
+  "name": "@gimmi7/ts-worker-pool",
   "version": "1.0.0",
   "description": "",
   "main": "dist/src/workerpool.js",
