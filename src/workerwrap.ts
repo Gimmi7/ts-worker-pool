@@ -36,6 +36,11 @@ export class WorkerWrap extends Worker {
     if (!os.platform().startsWith("win")) {
       workerFile = "/" + workerFile;  // add root path
     }
+    if (!options) {
+      options = {
+        argv: process.argv.slice(2)
+      }
+    }
     super(workerFile, options)
 
     // add event listeners
