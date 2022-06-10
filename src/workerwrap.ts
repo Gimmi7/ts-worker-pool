@@ -2,6 +2,7 @@ import { EventLoopUtilization } from 'node:perf_hooks';
 import { Worker, WorkerOptions } from "worker_threads";
 import path from "path";
 import { buildWorkerMsg, Message } from "./message.js";
+import os from "os";
 
 interface ResolveReject<T> {
   promise: Promise<T>
@@ -31,7 +32,10 @@ export class WorkerWrap extends Worker {
 
   constructor(options?: WorkerOptions) {
     const dirname = path.dirname(import.meta.url).replace("file:///", '')
-    const workerFile = dirname + "/workerfile.js"
+    let workerFile = dirname + "/workerfile.js"
+    if (!os.platform().startsWith("win")) {
+      workerFile = "/" + workerFile;  // add root path
+    }
     super(workerFile, options)
 
     // add event listeners
