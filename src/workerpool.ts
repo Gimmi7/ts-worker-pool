@@ -64,10 +64,10 @@ export class WorkerPool {
   }
 
   _chooseIdealWorker(): WorkerWrap {
-    if (this._pool.length == 0) {
-      console.log("pool.length == 0, return new worker")//todo
+    if (this._pool.length == 0 || this._pool.length < this._poolConfig.corePoolSize) {
       return this._newWorker()
     }
+
     const workerMap: Map<number, WorkerWrap> = new Map()
     for (const worker of this._pool) {
       workerMap.set(worker.threadId, worker)
