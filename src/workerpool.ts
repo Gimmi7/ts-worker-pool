@@ -24,10 +24,10 @@ export class WorkerPool {
     if (this._poolConfig.keepAliveMinutes > 1) {
       intervalMinutes = this._poolConfig.keepAliveMinutes
     }
-    const syncCheckIdle = () => {
-      this._lock.acquire(this._workerLockKey, this._checkIdleWorker.bind(this))
-    }
-    setInterval(syncCheckIdle, intervalMinutes * 60 * 1000)
+    // const syncCheckIdle = () => {
+    //   this._lock.acquire(this._workerLockKey, this._checkIdleWorker.bind(this))
+    // }
+    // setInterval(syncCheckIdle, intervalMinutes * 60 * 1000)
   }
 
   static defaultPool(): WorkerPool {
